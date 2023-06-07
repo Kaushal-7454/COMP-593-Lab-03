@@ -78,7 +78,7 @@ def process_sales_data(sales_csv_path, orders_dir_path):
     
 
     # Insert a new "TOTAL PRICE" column into the DataFrame
-    df.insert(7, 'TOTAL PRICE', df['ITEM QUALITY'] * df['ITEM PRICE'])
+    df.insert(7, 'TOTAL PRICE', df['ITEM QUANTITY'] * df['ITEM PRICE'])
     
     # Remove columns from the DataFrame that are not needed
     df.drop(columns=['ADDRESS','CITY','STATE','POSTAL CODE', 'COUNTRY'], inplace=True)
@@ -111,6 +111,7 @@ def process_sales_data(sales_csv_path, orders_dir_path):
         
         
         # TODO: Format the Excel sheet
+
         # TODO: Define format for the money columns
         # TODO: Format each colunm
         # TODO: Close the Excelwriter 
