@@ -111,10 +111,18 @@ def process_sales_data(sales_csv_path, orders_dir_path):
         
         
         # TODO: Format the Excel sheet
+        
+        workbook = pd.ExcelWriter(file_path, engine='openpyxl')
+        worksheet = workbook.sheets['Sheet1']
 
         # TODO: Define format for the money columns
+        
+        money_format = workbook.book.add_format({'num_format': '$#,##0'})
+        
         # TODO: Format each colunm
+
         # TODO: Close the Excelwriter 
+        workbook.close()
     return
 
 if __name__ == '__main__':
